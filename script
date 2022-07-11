@@ -1,0 +1,23 @@
+#!/bin/bash
+
+serverlist='myserver_list.txt'
+
+servers=`cat $myserver_list.txt`
+
+kernel='ssh myuser@$ {server} 
+
+result='servers_versions.txt'
+
+echo -e "Servername \t\t OS version"> $result
+
+for server in $servers
+do
+kernel='ssh myuser@${server} "cat /etc/os-release"
+
+#gerar filename
+sysstat > $FILENAME
+
+#here we make filename value, using hostname, and date.
+FILENAME="Servers_version-`hostname`-`date +%H%M%S`-`date +%m%d%y.txt"
+
+done
